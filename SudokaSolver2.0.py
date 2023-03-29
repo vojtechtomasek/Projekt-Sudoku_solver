@@ -9,6 +9,9 @@
     [3, 0, 0, 9, 4, 0, 7, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0]"""
 
+"""1, 0, 0
+   0, 2, 0
+   0, 0, 3"""
 
 sudoku = []
 
@@ -17,7 +20,7 @@ def create_sudoku(rozhrani):
         sudoku.append([])
     return sudoku
 
-print("Pokud chceš napsat prázdné místo napiš 0\nVyber si jednu se tří možností sudoky - 3x3, 9x9, 16x16 (odpověď napiš ve vzoru 1 2 3)")
+print("\nPokud chceš napsat prázdné místo napiš 0\nVyber si jednu se tří možností sudoky - 3x3, 9x9, 16x16 (odpověď napiš ve vzoru 1 2 3)")
 odpoved = input("Tvoje odpoved: ")
 
 
@@ -95,7 +98,21 @@ def solve(sudo):
     return False
 
 
-def print_sudoku(sudo):
+def print_sudoku_1(sudo):
+    for i in range(len(sudo)):
+        if i % 3 == 0 and i != 0:
+            print("- - - - ")
+        for j in range(len(sudo[0])):
+            if j % 3 == 0 and j != 0:
+                print("| ", end="")
+            if j == 2 or j == 5 or j == 8:
+                print(sudo[i][j])
+            else:
+                print(str(sudo[i][j]) + " ", end="")
+        
+
+
+def print_sudoku_2(sudo):
     for i in range(len(sudo)):
         if i % 3 == 0 and i != 0:
             print("- - - - - - - - - - - -")
@@ -108,11 +125,23 @@ def print_sudoku(sudo):
                 print(str(sudo[i][j]) + " ", end="") 
 
 
-if __name__ == "__main__":
-    print_sudoku(sudoku)
+
+
+if odpoved == "1":
+    print()
+    print_sudoku_1(sudoku)
+    solve(sudoku)
+    print("- - - - ")
+    print_sudoku_1(sudoku)
+
+elif odpoved == "2":
+    print()
+    print_sudoku_2(sudoku)
     solve(sudoku)
     print()
     print("- - - - - - - - - - - -")
     print()
-    print_sudoku(sudoku)
+    print_sudoku_2(sudoku)
 
+
+    
