@@ -4,6 +4,7 @@ import pygame
 pygame.init()
 pygame.font.init()
 
+
 sudoku = [
     [5, 3, 0, 0, 7, 0, 0, 0, 0],
     [6, 0, 0, 1, 9, 5, 0, 0, 0],
@@ -16,6 +17,7 @@ sudoku = [
     [0, 0, 0, 0, 8, 0, 0, 7, 9]
 ]
 
+
 WIDTH, HEIGHT = 543, 543
 GRID_SIZE     = 9
 GRID_WIDTH_X  = WIDTH  // GRID_SIZE
@@ -27,6 +29,7 @@ pygame.display.set_caption("Sudoku")
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
+RED = (255, 0, 0)
 
 FPS = 60
 
@@ -59,6 +62,7 @@ def main():
     
     clock = pygame.time.Clock()
     run = True
+    
     while run:
         clock.tick(FPS)
         for event in pygame.event.get():
@@ -69,10 +73,11 @@ def main():
                 mouse_x, mouse_y = pygame.mouse.get_pos()
                 cell_x = mouse_x // GRID_WIDTH_X 
                 cell_y = mouse_y // GRID_HEIGHT_Y
-                print( "Click in cell [%d,%d]" % ( mouse_x, mouse_y ))
-                print( "Click in cell [%d,%d]" % ( cell_x, cell_y ))
+                #print( "Click in cell [%d,%d]" % ( mouse_x, mouse_y ))
+                #print( "Click in cell [%d,%d]" % ( cell_x, cell_y ))
                 
             keys = pygame.key.get_pressed()
+            
             if keys[pygame.K_1]:
                 sudoku[cell_y][cell_x] = 1
             elif keys[pygame.K_2]:
@@ -91,12 +96,13 @@ def main():
                 sudoku[cell_y][cell_x] = 8
             elif keys[pygame.K_9]:
                 sudoku[cell_y][cell_x] = 9
-            elif keys[pygame.K_0]:
+            elif keys[pygame.K_BACKSPACE]:
                 sudoku[cell_y][cell_x] = 0
-            elif keys[pygame.K_KP_ENTER]:
+            elif keys[pygame.K_SPACE]:
                 solve(sudoku)
                 
         draw_window()
+        
             
     pygame.quit
     
@@ -104,56 +110,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-"""pygame.init()
-
-WIDTH = 515
-HEIGHT = 540
-SCREEN = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Sudoku")
-
-
-BLACK = (0, 0, 0)
-WHITE = (255, 255, 255)
-
-font = pygame.font.SysFont("Arial", 40)
-
-
-running = True
-while running:
-    # handle events
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-    
-    # fill the SCREEN with white
-    SCREEN.fill(WHITE)
-    
-    # draw the Sudoku grid
-    for i in range(10):
-        if i % 3 == 0:
-            thickness = 4
-        else:
-            thickness = 1
-        pygame.draw.line(SCREEN, BLACK, (30 + i * 50, 30), (30 + i * 50, 482), thickness)
-        pygame.draw.line(SCREEN, BLACK, (30, 30 + i * 50), (482, 30 + i * 50), thickness)
-    
-    # draw the numbers
-    for i in range(9):
-        for j in range(9):
-            num = sudoku[i][j]
-            if num != 0:
-                text = font.render(str(num), True, BLACK)
-                text_rect = text.get_rect(center=(50*j+55, 50*i+55))
-                SCREEN.blit(text, text_rect)
-    
-    # update the screen
-    pygame.display.flip()
-    
-
-# quit Pygame
-pygame.quit()"""
-
-
-   
 
