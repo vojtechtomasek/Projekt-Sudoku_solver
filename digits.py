@@ -8,13 +8,12 @@ from tensorflow.python.keras.models import Sequential
 from tensorflow.python.keras.layers import Dense, Dropout, Flatten
 from tensorflow.python.keras.layers import Conv2D, MaxPooling2D
 import numpy as np
-#from sklearn import metrics
-#from sklearn.metrics import accuracy_score
-#from sklearn.metrics import confusion_matrix
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
 
 #
-
-"""mnist = tf.keras.datasets.mnist
+"""
+mnist = tf.keras.datasets.mnist
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
 
 
@@ -30,7 +29,7 @@ X_train = X_train.reshape(X_train.shape[0], 28, 28, 1)
 X_test = X_test.reshape(X_test.shape[0], 28, 28, 1)
 
 
-# převést na one-hot encoding
+# převedení na one-hot encoding
 n_classes = 10
 
 y_train = np_utils.to_categorical(y_train, n_classes)
@@ -71,15 +70,15 @@ model = tf.keras.models.load_model('handwritten.model')
 
 
 # výsledky pravděpodobnosti
-"""y_pred = model.predict(X_test)
+"""y_pred = model.predict(X_test)#
 
-y_test_class = np.argmax(y_test, axis=1)
-y_pred_class = np.argmax(y_pred, axis=1)"""
+y_test_class = np.argmax(y_test, axis=1)#
+y_pred_class = np.argmax(y_pred, axis=1)#"""
 
 
 # výpis výsledků
-#print("Accuracy score: ", accuracy_score(y_test_class, y_pred_class))
-#print("Confusion matrix: \n", confusion_matrix(y_test_class, y_pred_class))
+"""print("Accuracy score: ", accuracy_score(y_test_class, y_pred_class))#
+print("Confusion matrix: \n", confusion_matrix(y_test_class, y_pred_class))#"""
 
 
 # načtení a klasifikace obrázků
@@ -96,15 +95,21 @@ while os.path.isfile(f"digits/digit{image_number}.png"):
         prediction = model.predict(img)
         predicted_value = np.argmax(prediction)
         grid.append(predicted_value)
-        print(f"Toto číslo je nejspíše {np.argmax(prediction)}")
-        #plt.imshow(img[0], cmap=plt.cm.binary)
-        #plt.show()
+        #print(f"Toto číslo je nejspíše {np.argmax(prediction)}")
+        #plt.imshow(img[0], cmap=plt.cm.binary)#
+        #plt.show()#
         
     except:
         print("ERROR!!!")
     
     finally:
         image_number += 1
-        
-"""for i in range(81-27):
-    grid.append(i)"""
+    
+#   vytvoření matrixu
+ 
+sudoku = [[0 for _ in range(9)] for _ in range(9)]
+
+for i in range(len(grid)):
+    if i < 81:
+        sudoku[i // 9][i % 9] = grid[i]
+    

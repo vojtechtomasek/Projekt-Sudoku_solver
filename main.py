@@ -1,29 +1,17 @@
-#from digits import sudoku
-from Sudoku import solve, valid
+from digits import sudoku
+from Sudoku import solve
 import pygame
+
 pygame.init()
 pygame.font.init()
 
-
-sudoku = [
-    [5, 3, 0, 0, 7, 0, 0, 0, 0],
-    [6, 0, 0, 1, 9, 5, 0, 0, 0],
-    [0, 9, 8, 0, 0, 0, 0, 6, 0],
-    [8, 0, 0, 0, 6, 0, 0, 0, 3],
-    [4, 0, 0, 8, 0, 3, 0, 0, 1],
-    [7, 0, 0, 0, 2, 0, 0, 0, 6],
-    [0, 6, 0, 0, 0, 0, 2, 8, 0],
-    [0, 0, 0, 4, 1, 9, 0, 0, 5],
-    [0, 0, 0, 0, 8, 0, 0, 7, 9]
-]
-
-
+#   nastavení velikosti okna
 WIDTH, HEIGHT = 543, 543
-GRID_SIZE     = 9
+GRID_SIZE = 9
 GRID_WIDTH_X  = WIDTH  // GRID_SIZE
 GRID_HEIGHT_Y = HEIGHT // GRID_SIZE
 
-
+#   vytvoreni okna
 WINDOW = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Sudoku")
 
@@ -35,6 +23,7 @@ FPS = 60
 
 font = pygame.font.SysFont("Arial", 40)
 
+#   vykresleni herni plochy
 def draw_window():
     WINDOW.fill(WHITE)
     for i in range(10):
@@ -58,6 +47,7 @@ def draw_window():
     pygame.display.update()
 
 
+#   hlavni funkce
 def main():
     
     clock = pygame.time.Clock()
