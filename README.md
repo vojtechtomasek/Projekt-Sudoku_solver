@@ -39,12 +39,12 @@ Celkově tedy program funguje následovně: nejprve se načtou a předzpracují 
 Projekt je implementován v jazyce Python. Pro použití projektu je nutné mít nainstalované Python 3.0 nebo novější a následující knihovny: OpenCV, TensorFlow, Matplotlib, Numpy a Scikit-learn.
 
 ### Použití projektu je následující:
-Ručně nakreslete nebo stáhněte písmena, která se budou dosazovat do herního pole. Projekt je optimalizován pro rozpoznávání ručně psaných čísel v rozlišení 28x28 pixelů. Proto je důležité dodržet následující doporučení při vytváření vstupních obrázků: velikost obrázku musí být 28x28 pixelů, čísla musí být psána tmavou barvou na bílém pozadí. 
-Otevřete příkazový řádek a přejděte do adresáře, ve kterém se nachází soubory pro sudoku solver.
-Program spustíte příkazem: py main.py
-Po spuštění programu se vám ukáže grafické rozhraní sudoku.
-Pokud by čísla, která se v sudoku zobrazí neseděla s těmi ručně psanými, můžete je změnit kliknutím na políčko, ve kterém se nachází a následným zmáčknutím klávesy 1 - 9. Kdyby jste chtěli dané číslo odstranit klikněte na tlačítko ‘backspace’.
-Jestliže všechna písmena sedí a je možné sudoku vyřešit zpáškněte klávesu ‘space’ a na herní ploše se automaticky zobrazí správné řešení. Pokud sudoku nebyli možno vyřešit program spadne a je nutné ho spustit znova.
+1. Ručně nakreslete nebo stáhněte písmena, která se budou dosazovat do herního pole. Projekt je optimalizován pro rozpoznávání ručně psaných čísel v rozlišení 28x28 pixelů. Proto je důležité dodržet následující doporučení při vytváření vstupních obrázků: velikost obrázku musí být 28x28 pixelů, čísla musí být psána tmavou barvou na bílém pozadí. 
+2. Otevřete příkazový řádek a přejděte do adresáře, ve kterém se nachází soubory pro sudoku solver.
+3. Program spustíte příkazem: py main.py
+4. Po spuštění programu se vám ukáže grafické rozhraní sudoku.
+5. Pokud by čísla, která se v sudoku zobrazí neseděla s těmi ručně psanými, můžete je změnit kliknutím na políčko, ve kterém se nachází a následným zmáčknutím klávesy 1 - 9. Kdyby jste chtěli dané číslo odstranit klikněte na tlačítko ‘backspace’.
+6. Jestliže všechna písmena sedí a je možné sudoku vyřešit zpáškněte klávesu ‘space’ a na herní ploše se automaticky zobrazí správné řešení. Pokud sudoku nebyli možno vyřešit program spadne a je nutné ho spustit znova.
 
 ## Možný rozvoj v budoucnu/popis reálného využití projektu
 V programu by mohlo být vylepšena přesnost rozpoznávání číslic pomocí strojového učení, zejména využití rozšířené reality. Díky rozšířené realitě by bylo možné načíst fotografii sudoku a pomocí kamery na mobilním zařízení nebo jiného zařízení s kamerou zobrazit výsledek řešení sudoku. Další možností rozšíření projektu může být vylepšení grafického rozhraní a zajistit, aby při zadání inputu, který nejde vyřešit program nepřestal fungovat. Další rozšíření by mohlo být možnost vybrat obtížnost nebo velikost sudoku a program by pak vrátil sudoku s určitou velikostí a obtížností.
