@@ -1,5 +1,5 @@
 # Projekt-Sudoku_solver
-##Úvod
+#Úvod
 Tato projektová dokumentace se bude zabývat implementací dvou různých programů. První program slouží k řešení sudoku a druhý klasifikuje ručně psané číslice pomocí neuronové sítě.
 
 ##Co program dělá
