@@ -1,4 +1,10 @@
 # Projekt-Sudoku_solver
+
+## Analýza pololetního projektu
+1. Sudoku_solver
+2. Vytvořit program, který dokáže řešit sudoku.
+3. Python, OpenCV, TensorFlow, Matplotlib, Scikit-learn, NumPy; očekávaná obtížnost: střední
+
 ## Úvod
 Tato projektová dokumentace se bude zabývat implementací dvou různých programů. První program slouží k řešení sudoku a druhý klasifikuje ručně psané číslice pomocí neuronové sítě.
 
