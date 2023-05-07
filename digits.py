@@ -12,7 +12,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
 
 #
-"""
+
 mnist = tf.keras.datasets.mnist
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
 
@@ -63,8 +63,8 @@ model.fit(X_train, y_train,
           validation_data=(X_test, y_test))
 
 model.save('handwritten.model')
-"""
-#
+
+# po prvním natrénování zakomentovat vše nad tímto commentem (kromě importovaných knihoven)
 
 model = tf.keras.models.load_model('handwritten.model')
 
@@ -77,8 +77,8 @@ y_pred_class = np.argmax(y_pred, axis=1)#"""
 
 
 # výpis výsledků
-"""print("Accuracy score: ", accuracy_score(y_test_class, y_pred_class))#
-print("Confusion matrix: \n", confusion_matrix(y_test_class, y_pred_class))#"""
+#print("Accuracy score: ", accuracy_score(y_test_class, y_pred_class))#
+#print("Confusion matrix: \n", confusion_matrix(y_test_class, y_pred_class))#
 
 
 # načtení a klasifikace obrázků
